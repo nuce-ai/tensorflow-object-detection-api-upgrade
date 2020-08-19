@@ -33,8 +33,10 @@ classes_image = {'rake': 74, 'can': 77, 'dustbin': 51, 'hoe': 73, 'spatula': 49,
 'showerhead': 46, 'chopsticks': 22, 'straw': 81, 'knife': 19}
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
+    try:
         return classes_image[row_label]
-
+    except:
+        return None
 
 def split(df, group):
     data = namedtuple('data', ['filename', 'object'])
